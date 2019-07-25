@@ -1,17 +1,25 @@
 <template>
   <section class='c-cats'>
-    <article class="c-cats__item" v-for="info in catInfos" v-bind:key="info.id">
-      <div>{{ info.text }}</div>
+    <a v-bind:href="link">cat facts</a>
+    <button v-on:click='fetchCats()'></button>
+    <article class="c-cats__item" v-for="cat in cats" v-bind:key="cat.id">
+      <div>{{ cat.text }}</div>
     </article>
   </section>
 </template>
 <script>
 export default {
   name: 'Cats',
+  data() {
+    return {
+      cats: [],
+      link: 'https://cat-fact.herokuapp.com'
+    }
+  },
   methods: {
     fetchCats(){
-      const api = `https://cat-fact.herokuapp.com/facts`
-      return fetch(api)
+      const vm = this
+      const api = `https://cat-fact.herokuapp.com`
     }
   }
 }

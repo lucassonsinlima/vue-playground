@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Yey Vue Playground"/>
+    <!-- <Message/> -->
+    <CandidatesProfile/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Cats from './components/Cats.vue'
+import CandidatesProfile from './components/candidates/CandidatesProfile.vue'
+// import Message from './components/Message.vue'
+// import Cats from './components/Cats.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Cats
+    // Message,
+    CandidatesProfile
+    // Cats
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import './assets/scss/main';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
