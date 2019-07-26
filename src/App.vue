@@ -1,21 +1,20 @@
 <template>
   <div id="app">
-    <!-- <Message/> -->
-    <CandidatesProfile/>
+    <link rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+
+    <Header></Header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import CandidatesProfile from './components/candidates/CandidatesProfile.vue'
-// import Message from './components/Message.vue'
-// import Cats from './components/Cats.vue'
+import Header from './components/shared/Header.vue'
 
 export default {
   name: 'app',
   components: {
-    // Message,
-    CandidatesProfile
-    // Cats
+    Header,
   }
 }
 </script>
