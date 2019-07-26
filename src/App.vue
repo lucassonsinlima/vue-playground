@@ -31,4 +31,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+h2 {
+  font-size: 16px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+  border-bottom: 1px solid;
+}
 </style>

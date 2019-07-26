@@ -2,4 +2,9 @@
 @import "base/reset";
 
 // variables
-@import "variables/colors"
+@import "variables/colors";
+@import "variables/buttons";
+
+//  components
+@import "components/buttons";
+@import "components/panel";

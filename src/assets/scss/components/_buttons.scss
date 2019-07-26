@@ -1,0 +1,19 @@
+.btn {
+  border-radius: $button-radius;
+  padding: $button-padding;
+  text-transform: lowercase;
+  box-shadow: none;
+  font-size: $button-font-size;
+  background: transparent;
+  outline: none;
+  margin: 10px 0;
+  display: block;
+  &--green {
+    background: $green;
+    color: white;
+  }
+  &--red {
+    background: $red;
+    color: white;
+  }
+}
