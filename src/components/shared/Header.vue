@@ -22,6 +22,9 @@
           <router-link class="md-button" to="/monster-killer">
             Monster Killer
           </router-link>
+          <router-link class="md-button" to="/async">
+            Async
+          </router-link>
         </div>
       </md-app-toolbar>
     </md-app>

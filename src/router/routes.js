@@ -22,7 +22,6 @@ export default  [
 ]
 
 function lazyLoadView(AsyncView) {
-  debugger
   const AsyncHandler = () => ({
     component: AsyncView,
     // A component to use while the component is loading.
