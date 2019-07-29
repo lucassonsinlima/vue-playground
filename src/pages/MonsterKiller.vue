@@ -28,7 +28,15 @@
       <div v-if="monsterHP == 0" class="result--win">You win :)</div>
       <div v-else class="result--lose">You died :(</div>
     </div>
-    <div class="panel buttons">hehe3</div>
+    <div class="panel buttons">
+      <template v-if="isRunning">
+        <button class="btn btn--blue" @click="attack(false)">Attack</button>
+        <button class="btn btn--yellow" @click="attack(true)">Special Move</button>
+        <button class="btn btn--green">Heal</button>
+        <button class="btn btn--red" @click="surrender">Surrender</button>
+      </template>
+      <button class="btn btn--black" @click="startGame">Play Game</button>
+    </div>
     <div class="panel logs">hehe4</div>
   </div>
 </template>
@@ -37,6 +45,7 @@
 export default {
   data() {
     return {
+      isRunning: false,
       playerHP: 100,
       monsterHP: 100
     }
@@ -47,7 +56,28 @@ export default {
     }
   },
   methods: {
+    startGame(e){
+      const vm = this
 
+      vm.isRunning = true
+      vm.playerHP = 100
+      vm.monsterHP = 100
+    },
+    surrender(e){
+      const vm = this
+
+      vm.isRunning = false
+    },
+    attack(special){
+      const vm = this
+
+      console.log(special, vm.getRandom(5, 10))
+    },
+    getRandom(min, max){
+      const value = Math.random() * (max - min) + min
+
+      return Math.round(value)
+    }
   },
   watch: {
     hasResult(new_value, old_value){
@@ -108,6 +138,33 @@ export default {
   }
   &--lose {
     color: red;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .btn {
+    margin: 0 10px;
+    width: 100px;
+    font-weight: 600
+  }
+}
+
+.btn {
+  color: #fff;
+
+  &--blue {
+    background: blue;
+  }
+  &--yellow {
+    background: yellow;
+    color: #000;
+  }
+  &--black {
+    background: #000;
   }
 }
 </style>
