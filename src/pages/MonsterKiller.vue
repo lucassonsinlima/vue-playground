@@ -32,22 +32,31 @@
       <template v-if="isRunning">
         <button class="btn btn--blue" @click="attack(false)">Attack</button>
         <button class="btn btn--yellow" @click="attack(true)">Special Move</button>
-        <button class="btn btn--green">Heal</button>
+        <button class="btn btn--green" @click="healAndHurt">Heal</button>
         <button class="btn btn--red" @click="surrender">Surrender</button>
       </template>
       <button class="btn btn--black" @click="startGame">Play Game</button>
     </div>
-    <div class="panel logs">hehe4</div>
+    <div v-if="logs.length" class="panel logs">
+      <ul>
+        <li v-for="(log, index) in logs"
+            :key="index"
+            class="log"
+            :class="log.klass">{{ log.text }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       isRunning: false,
       playerHP: 100,
-      monsterHP: 100
+      monsterHP: 100,
+      logs: []
     }
   },
   computed: {
@@ -62,6 +71,7 @@ export default {
       vm.isRunning = true
       vm.playerHP = 100
       vm.monsterHP = 100
+      vm.logs = []
     },
     surrender(e){
       const vm = this
@@ -71,16 +81,46 @@ export default {
     attack(special){
       const vm = this
 
-      console.log(special, vm.getRandom(5, 10))
+      this.hurt('monsterHP', 5, 10, special, 'Player', 'Monster', 'player')
+
+      if(this.monsterHP > 0) {
+        this.hurt('playerHP', 7, 12, false, 'Monster', 'Player', 'monster')
+      }
+    },
+    hurt(who, min, max, special, source, target, klass){
+      const vm = this
+      const plus = special ? 5 : 0
+      const hurt = this.getRandom(min + plus, max + plus)
+
+      this[who] = Math.max(this[who] - hurt, 0)
+
+      vm.registerLog(`${source} hitted ${target} with ${hurt}.`, klass)
     },
     getRandom(min, max){
       const value = Math.random() * (max - min) + min
 
       return Math.round(value)
+    },
+    healAndHurt(){
+      this.heal(10, 15)
+      this.hurt('playerHP', 7, 12, false, 'Monster', 'Player', 'monster')
+    },
+    heal(min, max) {
+      const vm = this
+      const heal = vm.getRandom(min, max)
+
+      vm.playerHP = Math.min(vm.playerHP + heal, 100)
+      vm.registerLog(`Player has been healed with ${heal}.`, 'player')
+    },
+    registerLog(text, klass) {
+      const vm = this
+
+      vm.logs.unshift({ text, klass })
     }
   },
   watch: {
-    hasResult(new_value, old_value){
+    hasResult(value){
+      if(value) this.isRunning = false
     }
   }
 }
@@ -165,6 +205,32 @@ export default {
   }
   &--black {
     background: #000;
+  }
+}
+
+.logs {
+   ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0;
+    padding: 3px 0;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+}
+
+.log {
+  &.monster {
+    background: rgba(255, 0, 0, 0.15);
+  }
+  &.player {
+    background: rgba(0, 255, 43, 0.13);
   }
 }
 </style>
