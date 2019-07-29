@@ -7,6 +7,9 @@
       {{ logged ? 'Log out' : 'Login' }}
     </button>
     <input type="checkbox" v-model="anonymous">
+    <footer v-show="logged">
+      <span class="text text--gray">Hello footer her</span>
+    </footer>
   </div>
 </template>
 

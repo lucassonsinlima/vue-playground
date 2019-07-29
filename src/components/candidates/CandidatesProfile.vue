@@ -173,7 +173,7 @@ $gray: #ddd;
     padding: 15px;
     margin-bottom: 15px;
     background: #fff;
-    transition: all 2s ease-in-out;
+    transition: all .5s ease-in-out;
 
     &:nth-child(2n + 1){
       margin-right: 15px;
