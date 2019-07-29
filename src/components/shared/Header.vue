@@ -16,7 +16,12 @@
 
         <div class="xd">
           <router-link class="md-button" to="/">Home</router-link>
-          <router-link class="md-button" to="/conditionals">Conditionals</router-link>
+          <router-link class="md-button" to="/conditionals">
+            Conditionals
+          </router-link>
+          <router-link class="md-button" to="/monster-killer">
+            Monster Killer
+          </router-link>
         </div>
       </md-app-toolbar>
     </md-app>
@@ -29,9 +34,6 @@
 
 <script>
 export default {
-  name: 'LastRowFixed',
-  data: () => ({
-    menuVisible: false
-  })
+  name: 'LastRowFixed'
 }
 </script>
