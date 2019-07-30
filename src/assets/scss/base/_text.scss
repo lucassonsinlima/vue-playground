@@ -1,0 +1,12 @@
+h1 {
+  padding-bottom: 15px;
+}
+
+.text {
+    display: block;
+    padding-bottom: 5px;
+
+    &--bold {
+        font-weight: 700;
+    }
+}

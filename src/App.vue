@@ -6,6 +6,9 @@
     <Header></Header>
     <router-view></router-view>
   </div>
+
+  <!-- <div id="myvue"> {{ name }} {{ lastname }} {{ 2 * 10 }} </div> -->
+
 </template>
 
 <script>
@@ -17,6 +20,7 @@ export default {
     Header,
   }
 }
+
 </script>
 
 <style lang="scss">

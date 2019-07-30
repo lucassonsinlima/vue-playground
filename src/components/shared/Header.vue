@@ -25,6 +25,9 @@
           <router-link class="md-button" to="/async">
             Async
           </router-link>
+          <router-link class="md-button" to="/lifecycle">
+            lifecycle
+          </router-link>
         </div>
       </md-app-toolbar>
     </md-app>

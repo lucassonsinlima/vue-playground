@@ -130,15 +130,6 @@ export default {
 
 $gray: #ddd;
 
-.text {
-  display: block;
-  padding-bottom: 5px;
-
-  &--bold {
-    font-weight: 700;
-  }
-}
-
 .c-profiles {
   padding: 10px;
 

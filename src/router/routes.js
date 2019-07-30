@@ -18,6 +18,10 @@ export default  [
   {
     path: '/async',
     component: () => lazyLoadView(import('@/pages/Async'))
+  },
+  {
+    path: '/lifecycle',
+    component: () => lazyLoadView(import('@/pages/LifeCycle'))
   }
 ]
 
