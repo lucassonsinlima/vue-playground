@@ -21,6 +21,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.eventbus {
+  .container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
 
+    > div {
+      flex-basis:  50%;
+      padding: 0 10px;
+    }
+  }
+}
 </style>
