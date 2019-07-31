@@ -22,6 +22,10 @@ export default  [
   {
     path: '/lifecycle',
     component: () => lazyLoadView(import('@/pages/LifeCycle'))
+  },
+  {
+    path: '/event-bus',
+    component: () => lazyLoadView(import('@/pages/EventBus'))
   }
 ]
 

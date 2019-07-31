@@ -28,6 +28,9 @@
           <router-link class="md-button" to="/lifecycle">
             lifecycle
           </router-link>
+          <router-link class="md-button" to="/event-bus">
+            event bus
+          </router-link>
         </div>
       </md-app-toolbar>
     </md-app>
