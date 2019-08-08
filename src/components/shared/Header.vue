@@ -31,6 +31,9 @@
           <router-link class="md-button" to="/event-bus">
             event bus
           </router-link>
+          <router-link class="md-button" to="/todo">
+            Todoist
+          </router-link>
         </div>
       </md-app-toolbar>
     </md-app>
