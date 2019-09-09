@@ -20,6 +20,10 @@ export default  [
     component: () => lazyLoadView(import('@/pages/Async'))
   },
   {
+    path: '/directives',
+    component: () => lazyLoadView(import('@/pages/CustomDirectives'))
+  },
+  {
     path: '/lifecycle',
     component: () => lazyLoadView(import('@/pages/LifeCycle'))
   },

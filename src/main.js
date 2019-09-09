@@ -10,6 +10,12 @@ import 'vue-material/dist/theme/default.css'
 
 Vue.use(VueMaterial)
 
+Vue.directive('destaque', {
+  bind(el, binding, vnode) {
+
+  }
+});
+
 new Vue({
   el: '#app',
   router,

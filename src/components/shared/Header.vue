@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <div class="xd">
+        <div>
           <router-link class="md-button" to="/">Home</router-link>
           <router-link class="md-button" to="/conditionals">
             Conditionals
@@ -33,6 +33,9 @@
           </router-link>
           <router-link class="md-button" to="/todo">
             Todoist
+          </router-link>
+          <router-link class="md-button" to="/directives">
+            Directives
           </router-link>
         </div>
       </md-app-toolbar>
