@@ -11,7 +11,10 @@
 
     <button
       :disabled="stopButtonDisabled"
-      @click="stopRecording" >Stop Recording</button>
+      @click="stopRecording"
+    >
+      Stop Recording
+    </button>
 
     <main>
       <video
