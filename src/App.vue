@@ -1,45 +1,71 @@
-<template>
-  <div id="app">
-    <link rel="stylesheet"
-    href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-
-    <Header></Header>
-    <router-view></router-view>
-  </div>
-
-  <!-- <div id="myvue"> {{ name }} {{ lastname }} {{ 2 * 10 }} </div> -->
-
-</template>
-
-<script>
-import Header from './components/shared/Header.vue'
-
-export default {
-  name: 'app',
-  components: {
-    Header,
-  }
-}
-
+<script setup>
+import { RouterView } from 'vue-router'
 </script>
 
-<style lang="scss">
-@import './assets/scss/main';
+<template>
+  <RouterView />
+</template>
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+header {
+  line-height: 1.5;
+  max-height: 100vh;
 }
 
-h2 {
-  font-size: 16px;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+nav {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
   display: inline-block;
-  border-bottom: 1px solid;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
 }
 </style>
