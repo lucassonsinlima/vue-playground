@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/record',
       name: 'record',
       component: () => import('../views/Record.vue')
+    },
+    {
+      path: '/media-recorder',
+      name: 'mediaRecorder',
+      component: () => import('../views/MediaRecorder.vue')
     }
   ]
 })
